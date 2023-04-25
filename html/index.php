@@ -5,9 +5,12 @@ $query = "SELECT * FROM users";
 
 $select_query = mysqli_query($connection, $query);
 
+$count = 0;
 while($row = mysqli_fetch_array($select_query)){
-        echo "{$row['ID']}-{$row['Nama']}-{$row['Alamat']}-{$row['Jabatan']}";
+        $count = $count + 1;
 }
+
+echo $count;
 
 mysqli_close($connection);
 ?>
